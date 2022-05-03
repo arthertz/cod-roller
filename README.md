@@ -3,7 +3,9 @@
 Fetch can be used either as a python library for making Chronicles of Darkness rolls or as a Discord bot that uses the new interactions API.
 Good for games like Changeling: The Lost.
 ### Written for python!
-### Setup
+### Using the Repl
+`python repl.py`
+### Discord Bot Setup
 Create a file called `config.yml` in the same directory as `bot.py`
 It should be configured as shown:
 ```yaml
