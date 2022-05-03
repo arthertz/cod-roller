@@ -18,6 +18,7 @@ class Pool:
         self.comment = comment
         self.difficulty = difficulty
         self.reroll_limit = 999
+        self.successes = 0
         self.dice = []
         for _ in range(size):
             self.dice.append(Dice(10))
@@ -25,6 +26,7 @@ class Pool:
 
     def roll(self):
         self.event_log.clear()
+        self.successes = 0
         rolls_to_make = [d for d in self.dice]
         successes = 0
         while len(rolls_to_make) > 0:
@@ -39,8 +41,10 @@ class Pool:
                 self.event_log.append(f"rerolling a {result}")
                 rolls_to_make.append(next_dice)
         self.event_log.append(f"######################################\n")
-        self.event_log.append(f"{self.comment}\n")
+        if len(self.comment) > 0:
+            self.event_log.append(f"{self.comment}\n")
         self.event_log.append(f"final result was {successes} successes")
+        self.successes = successes
         return successes
 
     def ten_again(self):

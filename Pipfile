@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 discord-py-interactions = "*"
 pyyaml = "*"
+python-daemon = "*"
 
 [dev-packages]
 

@@ -34,7 +34,7 @@ standard_roll_options = [
 
 def pool_2_embed(member, pool):
     return interactions.Embed(
-        title=f"{pool.size} against {pool.difficulty}",
+        title=f"{pool.successes} Successes",
         description=str(pool),
         author=interactions.EmbedAuthor(
             name=member.nick, icon_url= user_2_avatarirl(member.user)
@@ -122,4 +122,5 @@ async def eight_again(ctx: interactions.CommandContext, size: int, difficulty: i
     embed = pool_2_embed(ctx.member, pool)
     await ctx.send(pool.comment, embeds=embed)
 
-bot.start()
+def run_bot():
+    bot.start()
