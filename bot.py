@@ -124,3 +124,6 @@ async def eight_again(ctx: interactions.CommandContext, size: int, difficulty: i
 
 def run_bot():
     bot.start()
+
+if __name__ == "__main__":
+    run_bot()
