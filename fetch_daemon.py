@@ -1,5 +1,4 @@
 import daemon
-
 from bot import run_bot
 
 
