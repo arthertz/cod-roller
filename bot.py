@@ -50,8 +50,7 @@ bot = interactions.Client(token=secret_token)
 
 @bot.command(
     name="hug_command",
-    description="Hug the bot!",
-    scope=guild_id
+    description="Hug the bot!"
 )
 async def hug_command(ctx: interactions.CommandContext):
     adverb = random.choice(["tightly", "softly", "faintly", "powerfully"])
@@ -59,8 +58,7 @@ async def hug_command(ctx: interactions.CommandContext):
     
 @bot.command(
     name="flip",
-    description="Flip a coin!",
-    scope=guild_id
+    description="Flip a coin!"
 )
 async def flip(ctx: interactions.CommandContext):
     result = random.choice(["heads", "tails"])
@@ -77,7 +75,6 @@ async def flip(ctx: interactions.CommandContext):
 @bot.command(
     name="roll",
     description="Basic CoD roll, reroll 10s",
-    scope=guild_id,
     options = standard_roll_options
 )
 async def roll(ctx: interactions.CommandContext, size: int, difficulty: int):
@@ -89,7 +86,6 @@ async def roll(ctx: interactions.CommandContext, size: int, difficulty: int):
 @bot.command(
     name="rote",
     description="Rote CoD roll-- reroll failures, but only once",
-    scope=guild_id,
     options = standard_roll_options
 )
 async def rote(ctx: interactions.CommandContext, size: int, difficulty: int):
@@ -101,7 +97,6 @@ async def rote(ctx: interactions.CommandContext, size: int, difficulty: int):
 @bot.command(
     name="nine_again",
     description="Nine again- reroll 9s and 10s for more successes",
-    scope=guild_id,
     options = standard_roll_options
 )
 async def nine_again(ctx: interactions.CommandContext, size: int, difficulty: int):
@@ -113,7 +108,6 @@ async def nine_again(ctx: interactions.CommandContext, size: int, difficulty: in
 @bot.command(
     name="eight_again",
     description="Eight again- reroll 8s, 9s and 10s for more successes",
-    scope=guild_id,
     options = standard_roll_options
 )
 async def eight_again(ctx: interactions.CommandContext, size: int, difficulty: int):
