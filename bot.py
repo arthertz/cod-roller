@@ -116,6 +116,18 @@ async def eight_again(ctx: interactions.CommandContext, size: int, difficulty: i
     embed = pool_2_embed(ctx.member, pool)
     await ctx.send(pool.comment, embeds=embed)
 
+@bot.command(
+    name="no_tens",
+    description="Don't reroll any successes",
+    options = standard_roll_options
+)
+async def no_tens(ctx: interactions.CommandContext, size: int, difficulty: int):
+    pool = fetch.Pool(size=size, difficulty=difficulty)
+    pool.reroll_triggers = [];
+    pool.roll();
+    embed = pool_2_embed(ctx.member, pool)
+    await ctx.send(pool.comment, embeds=embed)
+
 def run_bot():
     bot.start()
 
