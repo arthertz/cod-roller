@@ -10,7 +10,15 @@ Create a file called `config.yml` in the same directory as `bot.py`
 It should be configured as shown:
 ```yaml
 secret_token: [Your Secret Token]
-guild_id: [Your Guild ID]
+guild_id: [Your Guild ID] # Guild ID has been deprecated
 ```
 
 This project requires dependencies to run. These are detailed in `Pipfile`. You can use Pipenv to install them automatically (`pipenv install`), or install them yourself.
+
+### Using the Bot
+
+```cmd
+> cd fetch-roller
+> pipenv shell
+> python bot.py
+```
